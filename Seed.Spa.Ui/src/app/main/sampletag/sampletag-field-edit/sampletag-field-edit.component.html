@@ -1,0 +1,15 @@
+<div class="row" [formGroup]="vm.form">
+  <section class="col-md-12">
+    <div class='form-group'>
+      <label>{{ vm.infos.tag.label }}</label>
+      <input type='text' class='form-control' [(ngModel)]='vm.model.tag' name='tag' required formControlName='tag'    maxlength=50 autocomplete='off'/>
+    </div>
+  </section>
+  <section class="col-md-12">
+    <div class='form-group'>
+      <label>{{ vm.infos.sampleId.label }}</label>
+      <input type='text' class='form-control' [(ngModel)]='vm.model.sampleId' name='sampleId' required formControlName='sampleId'  maski='9999999999'  autocomplete='off'/>
+    </div>
+  </section>
+</div>
+
