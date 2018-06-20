@@ -21,7 +21,9 @@ namespace Seed.Domain.Services
         public override Task<Sample> DomainOrchestration(Sample entity, Sample entityOld)
         {
             if (entity.AttributeBehavior == "ComplexSave")
-                this._repSampleTag.RemoveRange(entity.CollectionSampleTag);
+            {
+                this._repSampleTag.RemoveRange(entityOld.CollectionSampleTag);
+            }
 
             return base.DomainOrchestration(entity, entityOld);
         }

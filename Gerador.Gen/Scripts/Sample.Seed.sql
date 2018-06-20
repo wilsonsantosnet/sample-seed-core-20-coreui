@@ -120,6 +120,13 @@ CREATE TABLE [dbo].[Unidade](
 ) ON [PRIMARY]
 
 GO
+CREATE TABLE [dbo].[SampleTag] (
+    [SampletagId] INT          IDENTITY (1, 1) NOT NULL,
+    [SampleId]    INT          NOT NULL,
+    [Tag]         VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([SampletagId] ASC)
+);
+GO
 ALTER TABLE [dbo].[ManySampleType]  WITH CHECK ADD  CONSTRAINT [FK_ManySampleType_Sample] FOREIGN KEY([SampleId])
 REFERENCES [dbo].[Sample] ([Id])
 GO
