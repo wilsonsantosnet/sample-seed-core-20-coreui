@@ -65,6 +65,15 @@ namespace Seed.Application
 			});
         }
 
+		public virtual async Task<System.Collections.Generic.List<SampleDto>> ImportNew(SampleDto model)
+		{
+			return await Task.Run(() =>
+				{
+					return new System.Collections.Generic.List<SampleDto>();
+				});
+		}
+
+
 
 
     }

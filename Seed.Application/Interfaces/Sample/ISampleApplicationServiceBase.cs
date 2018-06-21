@@ -7,6 +7,9 @@ namespace Seed.Application.Interfaces
 {
     public interface ISampleApplicationServiceBase : IApplicationServiceBase<SampleDto>
     {
+		Task<System.Collections.Generic.List<SampleDto>> ImportNew(SampleDto model);
+
+
 
     }
 }

@@ -63,7 +63,20 @@ namespace Seed.Gen
                            Name = "Tags",
                            Tags = true
                        }
-                   } },
+                   }, MethodConfig = 
+                        new List<MethodConfig> {   
+                            new MethodConfig
+                            {
+                                SignatureControllerTemplate = "ImportNew(SampleDto model)",
+                                SignatureAppTemplate = "ImportNew(SampleDto model)",
+                                ParameterReturn = "new System.Collections.Generic.List<SampleDto>()",
+                                CallTemplate = "ImportNew(model)",
+                                Dto = "System.Collections.Generic.List<SampleDto>",
+                                Route = "[HttpPost(\"ImportNew\")]",
+                                Verb = "[HttpPost(\"Post\")]"
+                            }
+                        }
+                   },
                    new TableInfo { TableName = "SampleType", MakeDomain = true, MakeApp = true, MakeDto = true, MakeCrud = true, MakeApi= true, MakeSummary = true , MakeFront= true},
                    new TableInfo { TableName = "SampleTag", MakeDomain = true, MakeApp = true, MakeDto = true, MakeCrud = true, MakeApi= true, MakeSummary = true , MakeFront= true},
                    new TableInfo { ClassName = "SampleDash", MakeFront = true, MakeFrontBasic = true , Scaffold = false, UsePathStrategyOnDefine = false },

@@ -120,6 +120,23 @@ namespace Seed.Api.Controllers
             }
         }
 
+		[HttpPost("Post")]
+        [HttpPost("ImportNew")]
+        public async Task<IActionResult> ImportNew(SampleDto model)
+        {
+            var result = new HttpResult<System.Collections.Generic.List<SampleDto>>(this._logger);
+            try
+            {
+                var returnModel = await this._app.ImportNew(model);
+                return result.ReturnCustomResponse(this._app, returnModel);
+            }
+            catch (Exception ex)
+            {
+                return result.ReturnCustomException(ex, "Seed - Sample", errorMap : new ErrorMapCustom());
+            }
+        }
+
+
 
 
     }

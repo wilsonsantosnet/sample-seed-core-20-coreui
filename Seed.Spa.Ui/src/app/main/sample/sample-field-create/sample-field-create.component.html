@@ -14,7 +14,7 @@
   <section class="col-md-12">
     <div class='form-group'>
       <label>{{ vm.infos.tags.label }}</label>
-      <tag-custom [ngModel] ="vm.model" (tagChange)="vm.model=$event" formControlName='tags' [ctrlName]="'collectionSampleTag'" [ctrlNameItem]="'sampletagId'" [ctrlNameItemDisplay]="'tag'" ></tag-custom>
+      <tag-custom [ngModel] ="vm.model.tags" (tagChange)="vm.model.tags=$event" formControlName='tags' ></tag-custom>
     </div>
   </section>
   <section class="col-md-12">
