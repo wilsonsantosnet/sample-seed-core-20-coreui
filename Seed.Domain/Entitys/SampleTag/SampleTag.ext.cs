@@ -7,7 +7,7 @@ namespace Seed.Domain.Entitys
     public class SampleTag : SampleTagBase
     {
 
-        
+        public virtual Sample Sample { get; set; }
 
         public SampleTag()
         {
@@ -35,7 +35,7 @@ namespace Seed.Domain.Entitys
 
         }
 
-       
+
 
     }
 }

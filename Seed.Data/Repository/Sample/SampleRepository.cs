@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System;
 using Common.Domain.Model;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Seed.Data.Repository
 {
@@ -25,12 +27,15 @@ namespace Seed.Data.Repository
         public IQueryable<Sample> GetBySimplefilters(SampleFilter filters)
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
+                                .AndCpmplexAgregation(filters)
                                 .WithBasicFilters(filters)
                                 .WithCustomFilters(filters)
                                 .OrderByDomain(filters)
                                 .OrderByProperty(filters);
             return querybase;
         }
+
+
 
         public async Task<Sample> GetById(SampleFilter model)
         {
