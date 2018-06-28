@@ -9,7 +9,7 @@ namespace Seed.Data.Repository
     public static class SampleDataAgregationExtension
     {
 
-        public static IIncludableQueryable<Sample, Sample> AndCpmplexAgregation(this IQueryable<Sample> source, SampleFilter filters)
+        public static IIncludableQueryable<Sample, Sample> AndComplexAgregation(this IQueryable<Sample> source, SampleFilter filters)
         {
             return source
                     .Include(_ => _.CollectionSampleTag)
