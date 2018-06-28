@@ -20,15 +20,17 @@ namespace Seed.Domain.Services
             this._repSampleTag = repSampleTag;
         }
 
-        public override Task<Sample> DomainOrchestration(Sample entity, Sample entityOld)
+        public override async Task<Sample> DomainOrchestration(Sample entity, Sample entityOld)
         {
             if (entity.AttributeBehavior == "ComplexSave")
             {
                 this._repSampleTag.RemoveRange(entityOld.CollectionSampleTag);
                 this._repManySampleType.RemoveRange(entityOld.CollectionManySampleType);
+
+                await this._repSampleTag.CommitAsync();
             }
 
-            return base.DomainOrchestration(entity, entityOld);
+            return await base.DomainOrchestration(entity, entityOld);
         }
 
     }

@@ -7,7 +7,7 @@ namespace Seed.Domain.Entitys
     public class SampleTag : SampleTagBase
     {
 
-        public virtual Sample Sample { get; set; }
+        //public virtual ICollection<Sample> CollectionSample { get; set; }
 
         public SampleTag()
         {
