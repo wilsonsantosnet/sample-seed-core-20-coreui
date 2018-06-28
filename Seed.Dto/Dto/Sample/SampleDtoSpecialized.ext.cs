@@ -12,6 +12,8 @@ namespace Seed.Dto
 
         public IEnumerable<SampleTagDto> CollectionSampleTag { get; set; }
 
+        public IEnumerable<ManySampleTypeDto> CollectionManySampleType { get; set; }
+
 
     }
 }

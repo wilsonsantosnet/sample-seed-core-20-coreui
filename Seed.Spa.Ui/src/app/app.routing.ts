@@ -15,6 +15,8 @@ const APP_ROUTES_DEFAULT: Routes = [
 
             { path: 'sampletag',  canActivate: [AuthGuard], loadChildren: './main/sampletag/sampletag.module#SampleTagModule' },
 
+            { path: 'manysampletype',  canActivate: [AuthGuard], loadChildren: './main/manysampletype/manysampletype.module#ManySampleTypeModule' },
+
             { path: 'sampledash',  canActivate: [AuthGuard], loadChildren: './main/sampledash/sampledash.module#SampleDashModule' }
 
             ]
@@ -25,6 +27,8 @@ const APP_ROUTES_DEFAULT: Routes = [
     { path: 'sampletype/print/:id', canActivate: [AuthGuard], loadChildren: './main/sampletype/sampletype-print/sampletype-print.module#SampleTypePrintModule' },
 
     { path: 'sampletag/print/:id', canActivate: [AuthGuard], loadChildren: './main/sampletag/sampletag-print/sampletag-print.module#SampleTagPrintModule' },
+
+    { path: 'manysampletype/print/:id', canActivate: [AuthGuard], loadChildren: './main/manysampletype/manysampletype-print/manysampletype-print.module#ManySampleTypePrintModule' },
 
 
 ]

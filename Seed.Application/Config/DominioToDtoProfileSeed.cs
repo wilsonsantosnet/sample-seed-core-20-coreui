@@ -23,6 +23,11 @@ namespace Seed.Application.Config
             CreateMap(typeof(SampleTag), typeof(SampleTagDtoSpecializedResult));
             CreateMap(typeof(SampleTag), typeof(SampleTagDtoSpecializedReport));
             CreateMap(typeof(SampleTag), typeof(SampleTagDtoSpecializedDetails));
+            CreateMap(typeof(ManySampleType), typeof(ManySampleTypeDto)).ReverseMap();
+            CreateMap(typeof(ManySampleType), typeof(ManySampleTypeDtoSpecialized));
+            CreateMap(typeof(ManySampleType), typeof(ManySampleTypeDtoSpecializedResult));
+            CreateMap(typeof(ManySampleType), typeof(ManySampleTypeDtoSpecializedReport));
+            CreateMap(typeof(ManySampleType), typeof(ManySampleTypeDtoSpecializedDetails));
 
         }
 

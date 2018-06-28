@@ -32,6 +32,10 @@ namespace Seed.Api
 			services.AddScoped<ISampleTagService, SampleTagService>();
 			services.AddScoped<ISampleTagRepository, SampleTagRepository>();
 
+			services.AddScoped<IManySampleTypeApplicationService, ManySampleTypeApplicationService>();
+			services.AddScoped<IManySampleTypeService, ManySampleTypeService>();
+			services.AddScoped<IManySampleTypeRepository, ManySampleTypeRepository>();
+
 
 
             RegisterOtherComponents(services);

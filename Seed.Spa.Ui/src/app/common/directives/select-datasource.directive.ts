@@ -59,6 +59,9 @@ export class DataSourceDirective implements OnInit, OnDestroy {
 
   init() {
     $(this._elemetRef.nativeElement).val(null).trigger('change');
+    setTimeout(() => {
+      this.datasource(this._elemetRef.nativeElement);
+    },250)
   }
 
   get control() {

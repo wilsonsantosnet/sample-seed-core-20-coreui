@@ -10,11 +10,13 @@ namespace Seed.Domain.Services
     public class SampleService : SampleServiceBase, ISampleService
     {
         private ISampleTagRepository _repSampleTag;
+        private IManySampleTypeRepository _repManySampleType;
 
-        public SampleService(ISampleRepository rep, ISampleTagRepository repSampleTag, ICache cache, CurrentUser user) 
+        public SampleService(ISampleRepository rep, ISampleTagRepository repSampleTag, IManySampleTypeRepository repManySampleType, ICache cache, CurrentUser user) 
             : base(rep, cache, user)
         {
 
+            this._repManySampleType = repManySampleType;
             this._repSampleTag = repSampleTag;
         }
 
@@ -23,6 +25,7 @@ namespace Seed.Domain.Services
             if (entity.AttributeBehavior == "ComplexSave")
             {
                 this._repSampleTag.RemoveRange(entityOld.CollectionSampleTag);
+                this._repManySampleType.RemoveRange(entityOld.CollectionManySampleType);
             }
 
             return base.DomainOrchestration(entity, entityOld);

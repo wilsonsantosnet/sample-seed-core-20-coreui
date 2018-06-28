@@ -18,6 +18,7 @@ namespace Seed.Data.Context
             new SampleMap(modelBuilder.Entity<Sample>());
             new SampleTypeMap(modelBuilder.Entity<SampleType>());
             new SampleTagMap(modelBuilder.Entity<SampleTag>());
+            new ManySampleTypeMap(modelBuilder.Entity<ManySampleType>());
 
         }
 

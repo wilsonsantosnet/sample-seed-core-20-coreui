@@ -43,6 +43,7 @@ namespace Seed.CrossCuting
                 new { Icon = "fa fa-edit", Name = "Sample", Route = "/sample" },
                 new { Icon = "fa fa-edit", Name = "SampleType", Route = "/sampletype" },
                 new { Icon = "fa fa-edit", Name = "SampleTag", Route = "/sampletag" },
+                new { Icon = "fa fa-edit", Name = "ManySampleType", Route = "/manysampletype" },
                 new { Icon = "fa fa-edit", Name = "SampleDash", Route = "/sampledash" },
 
             };
