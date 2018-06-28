@@ -27,7 +27,7 @@ namespace Seed.Data.Repository
         public IQueryable<Sample> GetBySimplefilters(SampleFilter filters)
         {
             var querybase = this.GetAll(this.DataAgregation(filters))
-                                .AndCpmplexAgregation(filters)
+                                .AndComplexAgregation(filters)
                                 .WithBasicFilters(filters)
                                 .WithCustomFilters(filters)
                                 .OrderByDomain(filters)
