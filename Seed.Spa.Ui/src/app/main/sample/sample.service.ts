@@ -80,13 +80,14 @@ export class SampleService extends ServiceBase {
 
   save(model: any): Observable<any> {
 
-    var newModel = Object.assign(model, { attributeBehavior: "ComplexSave" })
 
-    if (newModel.sampleId != undefined) {
+
+    if (model.sampleId != undefined) {
+      var newModel = Object.assign(model, { attributeBehavior: "ComplexSave" })
       return this.api.setResource('Sample').put(newModel);
     }
 
-    return this.api.setResource('Sample').post(newModel);
+    return this.api.setResource('Sample').post(model);
   }
 
   delete(model: any): Observable<any> {
